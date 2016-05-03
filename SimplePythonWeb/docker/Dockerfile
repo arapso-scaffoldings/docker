@@ -12,11 +12,14 @@ ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
 
-VOLUME /opt/pigui-web
-RUN ln -s /opt/pigui-web /var/www/pigui
+VOLUME /opt/web
+RUN ln -s /opt/web /var/www/web
 
-ADD config /pigui-config
-RUN pip install -r /pigui-config/requirements.txt
+ADD config /web-config
+RUN pip install -r /web-config/requirements.txt
+RUN cp /web-config/web.conf /etc/apache2/sites-available/web.conf
+RUN a2dissite 000-default.conf
+RUN a2ensite web.conf
 
 EXPOSE 80 5000
 

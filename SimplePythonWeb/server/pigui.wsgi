@@ -1,1 +1,0 @@
-from pigui import app as application
