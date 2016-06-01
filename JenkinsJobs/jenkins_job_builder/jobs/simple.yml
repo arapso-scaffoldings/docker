@@ -1,2 +1,11 @@
+- builder:
+    name: simple-builder
+    builders:
+        - shell: 'echo Hello Jenkins Builder World'
+
+
 - job:
     name: job-name
+    description: 'My first jenkins job definition'
+    builders:
+        - simple-builder
