@@ -9,7 +9,7 @@
     description: 'My first jenkins job definition'
     scm:
         - git:
-            url: git@github.com:arapso-scaffoldings/docker.git
+            url: https://github.com/arapso-scaffoldings/docker.git
             branches:
                 - origin/master
     builders:
