@@ -15,5 +15,5 @@ ADD jobs /jobs
 VOLUME /jobs
 VOLUME /config
 
-#CMD jenkins-jobs --conf /config/jenkins_jobs.ini update --delete-old /jobs
-CMD bash
+CMD jenkins-jobs --conf /config/jenkins_jobs.ini update --delete-old /jobs
+#CMD bash
