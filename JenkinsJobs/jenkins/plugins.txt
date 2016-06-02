@@ -15,7 +15,7 @@ envinject:latest
 git-client:latest
 github-api:latest
 github-oauth:latest
-git:latest
+git:2.4.1
 greenballs:latest
 groovy:latest
 jenkins-multijob-plugin:latest
