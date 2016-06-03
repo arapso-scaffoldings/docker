@@ -4,7 +4,6 @@
         - maven-target:
             goals: 'clean install'
 
-
 - scm:
     name: github-payu
     scm:
@@ -23,7 +22,7 @@
     scm:
         - github-payu:
             gitrepo: 'https://bitbucket.org/arapso/graphiz.git'
-            branch: 'origin/master'
+            branch: 'origin/develop'
     builders:
         - simple-builder
 
