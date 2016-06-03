@@ -5,15 +5,29 @@
             goals: 'clean install'
 
 
-- job:
-    name: graphiz_build
-    description: 'My first jenkins job definition'
+- scm:
+    name: github-payu
     scm:
         - git:
-            credentials-id: bitbucket-credentials
-            url: https://bitbucket.org/arapso/graphiz.git
-            branches:
-                - origin/master
+            name: 'origin'
+            credentials-id: 'bitbucket-credentials'
+            url: '{gitrepo}'
             skip-tag: true
+            wipe-workspace: false
+            branches:
+                - '{branch}'
+
+- job-template:
+    name: '{name}-build'
+    description: 'My first jenkins job definition'
+    scm:
+        - github-payu:
+            gitrepo: 'https://bitbucket.org/arapso/graphiz.git'
+            branch: 'origin/master'
     builders:
         - simple-builder
+
+- project:
+    name: 'graphiz'
+    jobs:
+        - '{name}-build':
