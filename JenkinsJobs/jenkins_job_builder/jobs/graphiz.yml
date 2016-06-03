@@ -6,12 +6,12 @@
 
 
 - job:
-    name: job-name
+    name: graphiz_build
     description: 'My first jenkins job definition'
     scm:
         - git:
             credentials-id: bitbucket-credentials
-            url: https://damian0o@bitbucket.org/arapso/graphiz.git
+            url: https://bitbucket.org/arapso/graphiz.git
             branches:
                 - origin/master
             skip-tag: true
